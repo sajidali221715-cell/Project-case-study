@@ -1,0 +1,38 @@
+/node_modules
+/dist
+/.env
+/coverage
+/.vscode
+.DS_Store
+*.log
+*.tmp
+*.bak
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+# Ignore OS-specific files
+Thumbs.db
+Desktop.ini
+# Ignore build artifacts
+/build
+/target
+# Ignore IDE-specific files
+/.idea/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# Ignore log files
+/logs
+*.log
+# Ignore temporary files
+*.tmp  
+*.bak
+# Ignore environment variable files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
