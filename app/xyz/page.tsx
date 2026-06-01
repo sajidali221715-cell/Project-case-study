@@ -26,7 +26,9 @@ export default function BuildersPoolCaseStudyPage() {
     loadLucide();
 
     let statsTriggered = false;
-    const getEl = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
+    function getEl<T extends HTMLElement>(id: string) {
+      return document.getElementById(id) as T | null;
+    }
 
     const setClass = (element: HTMLElement | null, className: string) => {
       if (element) element.className = className;
@@ -1926,6 +1928,9 @@ export default function BuildersPoolCaseStudyPage() {
           </div>
         </div>
 
+      </div>
+    </section>
+
     {/* SECTION 9 â€” ADMIN & SUPPLIER SYSTEM */}
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -2486,5 +2491,3 @@ export default function BuildersPoolCaseStudyPage() {
     </>
   );
 }
-
-

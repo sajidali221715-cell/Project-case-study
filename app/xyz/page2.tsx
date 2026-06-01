@@ -2,8 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
-function CaseStudyPage({ children }) {
+type ChildrenProps = {
+  children: ReactNode;
+};
+
+type ClassNameProps = {
+  className?: string;
+};
+
+type SlideProps = ChildrenProps &
+  ClassNameProps & {
+    label: string;
+    id: string;
+  };
+
+type ImageProps = {
+  src: string;
+  alt: string;
+};
+
+function CaseStudyPage({ children }: ChildrenProps) {
   return (
     <main className="m-0 min-h-screen w-full overflow-x-hidden bg-white p-0 font-[Poppins,Arial,sans-serif]">
       <div className="m-0 w-full overflow-x-auto px-[clamp(3rem,12vw,12rem)] py-[clamp(1rem,2vw,2rem)]">
@@ -26,7 +46,7 @@ function CaseStudyPage({ children }) {
   );
 }
 
-function DotBg({ className = "" }) {
+function DotBg({ className = "" }: ClassNameProps) {
   return (
     <div
       className={`pointer-events-none absolute inset-0 ${className}`}
@@ -39,7 +59,7 @@ function DotBg({ className = "" }) {
   );
 }
 
-function Logo({ className = "" }) {
+function Logo({ className = "" }: ClassNameProps) {
   return (
     <Image
       src="/rhv/assets/logo.png"
@@ -53,7 +73,7 @@ function Logo({ className = "" }) {
   );
 }
 
-function Slide({ children, className = "", label, id }) {
+function Slide({ children, className = "", label, id }: SlideProps) {
   return (
     <section
       id={id}
@@ -65,7 +85,7 @@ function Slide({ children, className = "", label, id }) {
   );
 }
 
-function GradientTitle({ children, className = "" }) {
+function GradientTitle({ children, className = "" }: ChildrenProps & ClassNameProps) {
   return (
     <h2
       className={`bg-gradient-to-r from-[#ff4d57] via-[#d64db9] to-[#8b4dff] bg-clip-text font-extrabold leading-none text-transparent ${className}`}
@@ -83,7 +103,7 @@ function Check() {
   );
 }
 
-function ChallengeIcon({ src, alt }) {
+function ChallengeIcon({ src, alt }: ImageProps) {
   return (
     <Image
       src={src}
@@ -96,7 +116,7 @@ function ChallengeIcon({ src, alt }) {
   );
 }
 
-function WorkflowImage({ src, alt }) {
+function WorkflowImage({ src, alt }: ImageProps) {
   return (
     <div className="mx-auto mt-[1em] flex h-[10.5em] w-full items-center justify-center">
       <Image
